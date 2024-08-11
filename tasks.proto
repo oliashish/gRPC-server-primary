@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+service TaskService {
+    rpc Initialize (InitRequest) returns (InitResponse);
+    rpc Execute (TaskRequest) returns (TaskResponse);
+}
+
+message InitRequest {
+    string code = 1;
+}
+
+message InitResponse {
+    string message = 1;
+}
+
+message TaskRequest {
+    string task = 1;
+}
+
+message TaskResponse {
+    string result = 1;
+}
